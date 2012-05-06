@@ -1,5 +1,5 @@
 # -*- encoding: utf-8 -*-
-require File.expand_path('../lib/encryptor/version', __FILE__)
+require File.expand_path('../lib/devise_encryptable/version', __FILE__)
 
 Gem::Specification.new do |gem|
   gem.authors       = ["Carlos Antonio da Silva", "José Valim", "Rodrigo Flores"]
@@ -11,7 +11,7 @@ Gem::Specification.new do |gem|
   gem.files         = `git ls-files`.split($\)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
   gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})
-  gem.name          = "classical_encryptors"
+  gem.name          = "devise_encryptable"
   gem.require_paths = ["lib"]
-  gem.version       = ClassicalEncryptors::VERSION
+  gem.version       = DeviseEncryptable::VERSION
 end
