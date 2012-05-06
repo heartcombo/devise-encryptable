@@ -1,12 +1,12 @@
-# Classical Encryptors
+# Devise Encryptable
 
-TODO: Write a gem description
+Abstracts the use of the salt field on encryptors that doesn't do that.
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
-    gem 'encryptor'
+    gem 'devise_encryptable'
 
 And then execute:
 
@@ -14,11 +14,15 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install encryptor
+    $ gem install devise_encryptable
 
 ## Usage
 
-TODO: Write usage instructions here
+After adding it to your Gemfile, just add the `encryptable` module, specify the desired encryption and it should work by itself.
+
+## Migrating from Devise 2.0
+
+We should write something here.
 
 ## Contributing
 
