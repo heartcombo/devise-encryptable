@@ -1,5 +1,1 @@
-require "devise/encryptable"
-require "version"
-
-module DeviseEncryptable
-end
+require "devise/encryptable/encryptable"
