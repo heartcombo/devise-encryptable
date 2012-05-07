@@ -1,4 +1,5 @@
-require "devise_encryptable/version"
+require "devise/encryptable"
+require "version"
 
 module DeviseEncryptable
 end
