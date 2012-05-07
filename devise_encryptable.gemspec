@@ -1,5 +1,5 @@
 # -*- encoding: utf-8 -*-
-require File.expand_path('../lib/devise_encryptable/version', __FILE__)
+require File.expand_path('../lib/devise/encryptable/version', __FILE__)
 
 Gem::Specification.new do |gem|
   gem.authors       = ["Carlos Antonio da Silva", "José Valim", "Rodrigo Flores"]
@@ -13,5 +13,7 @@ Gem::Specification.new do |gem|
   gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})
   gem.name          = "devise_encryptable"
   gem.require_paths = ["lib"]
-  gem.version       = DeviseEncryptable::VERSION
+  gem.version       = Devise::Encryptable::VERSION
+
+  gem.add_dependency("devise", '>= 2.1.0.rc')
 end
