@@ -8,7 +8,7 @@ gem 'minitest'
 gem 'rails'
 gem 'sqlite3'
 
-gem 'mocha'
+gem 'mocha', :require => false
 
 gem 'pry'
 gem 'pry-doc'

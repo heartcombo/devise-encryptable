@@ -48,6 +48,7 @@ module Devise
       def authenticatable_salt
         self.password_salt
       end
+
     protected
 
       # Digests the password using the configured encryptor.

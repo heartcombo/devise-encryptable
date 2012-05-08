@@ -1,18 +1,5 @@
 require "test_helper"
 
-def swap(object, new_values)
-  old_values = {}
-  new_values.each do |key, value|
-    old_values[key] = object.send key
-    object.send :"#{key}=", value
-  end
-  yield
-ensure
-  old_values.each do |key, value|
-    object.send :"#{key}=", value
-  end
-end
-
 class Encryptors < ActiveSupport::TestCase
   test 'should match a password created by authlogic' do
     authlogic = "b623c3bc9c775b0eb8edb218a382453396fec4146422853e66ecc4b6bc32d7162ee42074dcb5f180a770dc38b5df15812f09bbf497a4a1b95fe5e7d2b8eb7eb4"
