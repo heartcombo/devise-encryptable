@@ -1,10 +1,6 @@
 require "rubygems"
 require "bundler/setup"
-
-require "rails"
-require "devise"
-
-require "devise_encryptable"
+Bundler.require(:default)
 
 require "minitest/autorun"
 require "minitest/unit"

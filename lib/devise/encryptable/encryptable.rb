@@ -1,3 +1,9 @@
+require "rubygems"
+require "bundler/setup"
+Bundler.require(:default)
+
+require "devise"
+
 module Devise
   # Declare encryptors length which are used in migrations.
   ENCRYPTORS_LENGTH = {
