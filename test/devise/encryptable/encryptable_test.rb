@@ -8,6 +8,10 @@ class EncryptableTest < ActiveSupport::TestCase
     end
   end
 
+  def assert_not(assertion)
+    assert !assertion
+  end
+
   def encrypt_password(admin, pepper=Admin.pepper, stretches=Admin.stretches, encryptor=Admin.encryptor_class)
     encryptor.digest('123456', stretches, admin.password_salt, pepper)
   end

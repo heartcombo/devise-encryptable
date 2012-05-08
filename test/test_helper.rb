@@ -6,6 +6,7 @@ require "minitest/autorun"
 require "minitest/unit"
 
 require "rails_app/config/environment"
+require "devise/encryptable/encryptable"
 
 ActiveRecord::Migration.verbose = false
 ActiveRecord::Base.logger = Logger.new(nil)

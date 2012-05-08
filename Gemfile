@@ -8,6 +8,8 @@ gem 'minitest'
 gem 'rails'
 gem 'sqlite3'
 
+gem 'mocha'
+
 gem 'pry'
 gem 'pry-doc'
 gem 'pry-nav'
