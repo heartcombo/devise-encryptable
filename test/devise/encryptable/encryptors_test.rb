@@ -1,9 +1,4 @@
-require "rubygems"
-require "bundler/setup"
-Bundler.require(:default)
-
-require "minitest/autorun"
-require "minitest/unit"
+require "test_helper"
 
 def swap(object, new_values)
   old_values = {}
