@@ -2,13 +2,14 @@ require "rubygems"
 require "bundler/setup"
 Bundler.require(:default)
 
+require "devise/encryptable/encryptable"
+
 require "minitest/autorun"
 require "minitest/unit"
 
 require "mocha"
 
 require "rails_app/config/environment"
-require "devise/encryptable/encryptable"
 
 require 'support/assertions'
 require 'support/factories'

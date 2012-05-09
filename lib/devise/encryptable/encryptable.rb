@@ -1,8 +1,5 @@
-require "rubygems"
-require "bundler/setup"
-Bundler.require(:default)
-
 module Devise
+
   # Declare encryptors length which are used in migrations.
   ENCRYPTORS_LENGTH = {
     :sha1   => 40,

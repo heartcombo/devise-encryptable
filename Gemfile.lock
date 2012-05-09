@@ -1,6 +1,6 @@
 GIT
   remote: git@github.com:plataformatec/devise.git
-  revision: 5f440dfe130d2696fc396c6227d34803af727e05
+  revision: 0d868b9ec1e0c7d3a041bb65c2889b5bd23d65dc
   branch: removing_encryptable
   specs:
     devise (2.1.0.rc)
@@ -12,7 +12,7 @@ GIT
 PATH
   remote: .
   specs:
-    devise_encryptable (0.0.1)
+    devise-encryptable (0.0.1)
       devise (>= 2.1.0.rc)
 
 GEM
@@ -124,7 +124,7 @@ PLATFORMS
 DEPENDENCIES
   awesome_print
   devise!
-  devise_encryptable!
+  devise-encryptable!
   minitest
   mocha
   pry
