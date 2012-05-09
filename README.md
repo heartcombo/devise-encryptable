@@ -31,6 +31,13 @@ end
 
 And you're ready to go!
 
+## Contributing
+
+* Fork it
+* Write your changes
+* Commit
+* Send a pull request
+
 ## License
 
 Apache License version 2. Copyright 2012 Plataformatec http://plataformatec.com.br
