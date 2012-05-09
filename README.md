@@ -1,33 +1,36 @@
 # Devise Encryptable
 
-Abstracts the use of the salt field on encryptors that doesn't do that.
-
-## Installation
-
-Add this line to your application's Gemfile:
-
-    gem 'devise_encryptable'
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install devise_encryptable
+Use alternative (and even your own!) encryptors with Devise.
 
 ## Usage
 
-After adding it to your Gemfile, just add the `encryptable` module, specify the desired encryption and it should work by itself.
+Add it to your Gemfile
 
-## Migrating from Devise 2.0
+```ruby
+gem "devise-encryptable"
+```
 
-We should write something here.
+Add the `encryptable` module to your model:
 
-## Contributing
+```ruby
+class User < ActiveRecord::Base
+  devise :database_authenticatable, :encryptable
+end
+```
 
-1. Fork it
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Added some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create new Pull Request
+And add the `password_salt` field to the database through a migration:
+
+
+```ruby
+class DeviseCreateUsers < ActiveRecord::Migration
+  def change
+    add_column :users, :password_salt, :string
+  end
+end
+```
+
+And you're ready to go!
+
+## License
+
+Apache License version 2. Copyright 2012 Plataformatec http://plataformatec.com.br
