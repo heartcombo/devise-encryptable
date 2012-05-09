@@ -1,50 +1,12 @@
 require "test_helper"
 
 class EncryptableTest < ActiveSupport::TestCase
-  def assert_same_content(result, expected)
-    assert expected.size == result.size, "the arrays doesn't have the same size"
-    expected.each do |element|
-      assert result.include?(element), "The array doesn't include '#{element}'."
-    end
-  end
-
-  def assert_not(assertion)
-    assert !assertion
-  end
+  include Support::Assertions
+  include Support::Factories
+  include Support::Swappers
 
   def encrypt_password(admin, pepper=Admin.pepper, stretches=Admin.stretches, encryptor=Admin.encryptor_class)
     encryptor.digest('123456', stretches, admin.password_salt, pepper)
-  end
-
-  def swap_with_encryptor(klass, encryptor, options={})
-    klass.instance_variable_set(:@encryptor_class, nil)
-
-    swap klass, options.merge(:encryptor => encryptor) do
-      begin
-        yield
-      ensure
-        klass.instance_variable_set(:@encryptor_class, nil)
-      end
-    end
-  end
-
-  def generate_unique_email
-    @@email_count ||= 0
-    @@email_count += 1
-    "test#{@@email_count}@example.com"
-  end
-
-  def valid_attributes(attributes={})
-    { :username => "usertest",
-      :email => generate_unique_email,
-      :password => '123456',
-      :password_confirmation => '123456' }.update(attributes)
-  end
-
-  def create_admin(attributes={})
-    valid_attributes = valid_attributes(attributes)
-    valid_attributes.delete(:username)
-    Admin.create!(valid_attributes)
   end
 
   test 'should generate salt while setting password' do
