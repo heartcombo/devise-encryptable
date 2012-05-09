@@ -15,5 +15,5 @@ Gem::Specification.new do |gem|
   gem.require_paths = ["lib"]
   gem.version       = Devise::Encryptable::VERSION
 
-  gem.add_dependency("devise", '>= 2.1.0.rc')
+  gem.add_dependency("devise", '~> 2.1.0.rc')
 end
