@@ -1,5 +1,5 @@
 GIT
-  remote: git@github.com:plataformatec/devise.git
+  remote: git://github.com/plataformatec/devise.git
   revision: 0d868b9ec1e0c7d3a041bb65c2889b5bd23d65dc
   branch: removing_encryptable
   specs:
