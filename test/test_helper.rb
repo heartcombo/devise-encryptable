@@ -1,6 +1,5 @@
-require "rubygems"
-require "bundler/setup"
-Bundler.require(:default)
+require "devise"
+require "active_support/core_ext/module/attribute_accessors"
 
 require "devise/encryptable/encryptable"
 
