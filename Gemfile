@@ -5,7 +5,7 @@ gemspec
 
 gem 'devise', :git => "git@github.com:plataformatec/devise.git", :branch => "removing_encryptable"
 gem 'minitest'
-gem 'rails'
+gem 'rails', "~> 3.2"
 gem 'sqlite3'
 
 gem 'mocha', :require => false

@@ -13,7 +13,7 @@ PATH
   remote: .
   specs:
     devise-encryptable (0.0.1)
-      devise (>= 2.1.0.rc)
+      devise (~> 2.1.0.rc)
 
 GEM
   remote: https://rubygems.org/
@@ -130,5 +130,5 @@ DEPENDENCIES
   pry
   pry-doc
   pry-nav
-  rails
+  rails (~> 3.2)
   sqlite3
