@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 gem "devise-encryptable", :path => ".."
 
-gem 'devise', :git => "git://github.com/plataformatec/devise.git", :branch => "removing_encryptable"
+gem 'devise', '>= 2.1.0.rc'
 gem 'minitest'
 gem 'rails', "3.1.4"
 gem 'sqlite3'

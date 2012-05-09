@@ -1,19 +1,8 @@
-GIT
-  remote: git://github.com/plataformatec/devise.git
-  revision: 0d868b9ec1e0c7d3a041bb65c2889b5bd23d65dc
-  branch: removing_encryptable
-  specs:
-    devise (2.1.0.rc)
-      bcrypt-ruby (~> 3.0)
-      orm_adapter (~> 0.0.7)
-      railties (~> 3.1)
-      warden (~> 1.1.1)
-
 PATH
   remote: ..
   specs:
-    devise-encryptable (0.0.1)
-      devise (~> 2.1.0.rc)
+    devise-encryptable (0.1.0)
+      devise (>= 2.1.0.rc)
 
 GEM
   remote: https://rubygems.org/
@@ -51,6 +40,11 @@ GEM
     bcrypt-ruby (3.0.1)
     builder (3.0.0)
     coderay (1.0.6)
+    devise (2.1.0.rc)
+      bcrypt-ruby (~> 3.0)
+      orm_adapter (~> 0.0.3)
+      railties (~> 3.1)
+      warden (~> 1.1.1)
     erubis (2.7.0)
     hike (1.2.1)
     i18n (0.6.0)
@@ -125,7 +119,7 @@ PLATFORMS
 
 DEPENDENCIES
   awesome_print
-  devise!
+  devise (>= 2.1.0.rc)
   devise-encryptable!
   minitest
   mocha
