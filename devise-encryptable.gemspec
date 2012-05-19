@@ -6,7 +6,7 @@ Gem::Specification.new do |gem|
   gem.email         = "contact@plataformatec.com.br"
   gem.description   = %q{Encryption solution for salted-encryptors on Devise}
   gem.summary       = %q{Encryption solution for salted-encryptors on Devise}
-  gem.homepage      = "http://github.com/plataformatec/devise_encryptable"
+  gem.homepage      = "http://github.com/plataformatec/devise-encryptable"
 
   gem.files         = `git ls-files`.split($\)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
