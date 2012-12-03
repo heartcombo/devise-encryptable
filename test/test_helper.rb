@@ -1,3 +1,4 @@
+ENV["RAILS_ENV"] = "test"
 require "devise"
 require "active_support/core_ext/module/attribute_accessors"
 
