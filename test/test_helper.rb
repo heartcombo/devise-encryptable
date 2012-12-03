@@ -6,7 +6,7 @@ require "devise/encryptable/encryptable"
 require "minitest/autorun"
 require "minitest/unit"
 
-require "mocha"
+require "mocha/api"
 
 require "rails_app/config/environment"
 
