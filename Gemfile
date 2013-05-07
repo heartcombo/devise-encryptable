@@ -9,8 +9,3 @@ gem 'rails', "~> 3.2"
 gem 'sqlite3'
 
 gem 'mocha', :require => false
-
-gem 'pry'
-gem 'pry-doc'
-gem 'pry-nav'
-gem 'awesome_print'
