@@ -3,9 +3,11 @@ rvm:
   - 1.8.7
   - 1.9.2
   - 1.9.3
+  - 2.0.0
 notifications:
-  recipients:
-    - carlos@plataformatec.com.br
-    - jose.valim@plataformatec.com.br
-    - rafael.franca@plataformatec.com.br
-    - rodrigo.flores@plataformatec.com.br
+  email: false
+  campfire:
+    on_success: change
+    on_failure: always
+    rooms:
+      - secure: "apo8q+63WTaltM6kUD4GFoMO3zVXaMV0O38yo7LN0xyD2O9650UpTZZdMZ6D\narJ29YCumJf3KsdPcxq3wcM0JhNCkg/G+apJYUDRJdlcboYr84v3/MbJf53U\ng8p7Big1TYbt5cjD40VQJTSqlzHgPoQAy2wGjuryuCY8jt+6wB0="
