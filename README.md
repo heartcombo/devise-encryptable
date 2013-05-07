@@ -1,6 +1,6 @@
 # Devise Encryptable
 
-[![Build Status](https://secure.travis-ci.org/plataformatec/devise-encryptable.png)](https://travis-ci.org/plataformatec/devise-encryptable)
+[![Build Status](https://api.travis-ci.org/plataformatec/devise-encryptable.png)](https://travis-ci.org/plataformatec/devise-encryptable)
 
 Use alternative (and even your own!) encryptors with Devise.
 
@@ -42,4 +42,4 @@ And you're ready to go!
 
 ## License
 
-Apache License version 2. Copyright 2012 Plataformatec http://plataformatec.com.br
+Apache License version 2. Copyright 2012-2013 Plataformatec http://plataformatec.com.br
