@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    devise-encryptable (0.1.1)
+    devise-encryptable (0.1.2)
       devise (>= 2.1.0)
 
 GEM
