@@ -10,7 +10,7 @@ class EncryptableTest < ActiveSupport::TestCase
   end
 
   test 'should generate salt while setting password' do
-    assert_present create_admin.password_salt
+    assert create_admin.password_salt.present?
   end
 
   test 'should not change password salt when updating' do
@@ -31,8 +31,8 @@ class EncryptableTest < ActiveSupport::TestCase
   end
 
   test 'should not generate salt if password is blank' do
-    assert_blank create_admin(:password => nil).password_salt
-    assert_blank create_admin(:password => '').password_salt
+    assert create_admin(:password => nil).password_salt.blank?
+    assert create_admin(:password => '').password_salt.blank?
   end
 
   test 'should encrypt password again if password has changed' do
