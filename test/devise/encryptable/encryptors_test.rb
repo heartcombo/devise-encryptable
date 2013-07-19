@@ -21,6 +21,20 @@ class Encryptors < ActiveSupport::TestCase
     assert_equal clearance, encryptor
   end
 
+  test 'should match a password created by bcrypt' do
+    clearance = "$2a$10$z8Juo3R8spywf8fONKVgGu8S8hONLihjUEFnPACOgTYhSehpNTTXG"
+    encryptor = Devise::Encryptable::Encryptors::Bcrypt.digest('123mudar', 10, '$2a$10$z8Juo3R8spywf8fONKVgGu', 'pepper')
+    assert_equal clearance, encryptor
+  end
+
+  test 'should succesfully compare with un peppered devise bcrypt password' do
+    encrypted_password = "$2a$10$AMQiUa8/uje38mewBbnOFu7isQ7cIgWwCyXOD.VRX0VvlAYt5.tdi"
+    salt = "$2a$10$AMQiUa8/uje38mewBbnOFu"
+    pepper = ""
+    password = '1234doei'
+    assert Devise::Encryptable::Encryptors::Bcrypt.compare(encrypted_password, password, nil, salt, pepper)
+  end
+
   Devise::ENCRYPTORS_LENGTH.each do |key, value|
     test "should have length #{value} for #{key.inspect}" do
       swap Devise, :encryptor => key do
