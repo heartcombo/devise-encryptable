@@ -68,8 +68,6 @@ module Devise
         # Returns the class for the configured encryptor.
         def encryptor_class
           @encryptor_class ||= case encryptor
-            when :bcrypt
-              raise "In order to use bcrypt as encryptor, simply remove :encryptable from your devise model"
             when nil
               raise "You need to give an :encryptor as option in order to use :encryptable"
             else
