@@ -23,7 +23,12 @@ class EncryptableTest < ActiveSupport::TestCase
 
   test 'should generate a base64 hash using SecureRandom for password salt' do
     swap_with_encryptor Admin, :sha1 do
-      SecureRandom.expects(:base64).with(15).returns('01lI').once
+      # Devise 3.1+ uses a different method to generate friendly tokens,
+      # when we drop support for Devise 2 we can remove this hack.
+      # https://github.com/plataformatec/devise/commit/4048545151fe467c9d8c8c6fce164788bb36e25f.
+      expected_method = Devise::VERSION >= '3.1.0' ? :urlsafe_base64 : :base64
+
+      SecureRandom.expects(expected_method).with(15).returns('01lI').once
       salt = create_admin.password_salt
       assert_not_equal '01lI', salt
       assert_equal 4, salt.size

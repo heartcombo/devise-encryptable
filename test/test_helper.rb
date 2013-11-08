@@ -1,5 +1,6 @@
 ENV["RAILS_ENV"] = "test"
 require "devise"
+require "devise/version"
 require "active_support/core_ext/module/attribute_accessors"
 
 require "devise/encryptable/encryptable"
