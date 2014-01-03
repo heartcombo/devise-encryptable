@@ -42,4 +42,4 @@ And you're ready to go!
 
 ## License
 
-Apache License version 2. Copyright 2012-2013 Plataformatec http://plataformatec.com.br
+Apache License version 2. Copyright 2012-2014 Plataformatec http://plataformatec.com.br
