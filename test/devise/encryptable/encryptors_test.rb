@@ -21,6 +21,13 @@ class Encryptors < ActiveSupport::TestCase
     assert_equal clearance, encryptor
   end
 
+  test 'digest should raise NotImplementedError if not implemented in subclass' do
+    c = Class.new(Devise::Encryptable::Encryptors::Base)
+    assert_raise(NotImplementedError) do
+      c.digest('quux', 10, 'foo', 'bar')
+    end
+  end
+
   Devise::ENCRYPTORS_LENGTH.each do |key, value|
     test "should have length #{value} for #{key.inspect}" do
       swap Devise, :encryptor => key do
