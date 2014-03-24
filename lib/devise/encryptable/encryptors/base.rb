@@ -9,8 +9,8 @@ module Devise
   module Encryptable
     module Encryptors
       class Base
-        def self.digest
-          raise NotImplemented
+        def self.digest(password, stretches, salt, pepper)
+          raise NotImplementedError
         end
 
         def self.salt(stretches)
