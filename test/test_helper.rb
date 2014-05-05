@@ -5,12 +5,9 @@ require "active_support/core_ext/module/attribute_accessors"
 
 require "devise/encryptable/encryptable"
 
-require "minitest/autorun"
-require "minitest/unit"
-
-require "mocha/setup"
-
 require "rails_app/config/environment"
+require "rails/test_help"
+require "mocha/setup"
 
 require 'support/assertions'
 require 'support/factories'
