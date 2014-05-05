@@ -1,7 +1,7 @@
 ### Unreleased.
 
 * Updated to Rails 4+.
-* Dropped compatiblity with Rails 3.1 and Ruby 1.8.
+* Dropped compatibility with Rails 3.1 and Ruby 1.8.
 
 ### 0.1.2
 
