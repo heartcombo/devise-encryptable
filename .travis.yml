@@ -12,7 +12,7 @@ gemfile:
 matrix:
   allow_failures:
     - rvm: 2.2
-      gemfile: gemfiles/Gemfile-rails.3.2.x
+      gemfile: gemfiles/Gemfile-rails-3.2.x
 notifications:
   email: false
   campfire:
