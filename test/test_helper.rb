@@ -13,6 +13,10 @@ require 'support/assertions'
 require 'support/factories'
 require 'support/swappers'
 
+if ActiveSupport.respond_to?(:test_order)
+  ActiveSupport.test_order = :random
+end
+
 ActiveRecord::Migration.verbose = false
 ActiveRecord::Base.logger = Logger.new(nil)
 

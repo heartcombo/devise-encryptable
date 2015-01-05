@@ -39,7 +39,7 @@ class CreateTables < ActiveRecord::Migration
       ## Token authenticatable
       t.string :authentication_token
 
-      t.timestamps
+      t.timestamps :null => false
     end
 
     create_table :admins do |t|
@@ -66,7 +66,7 @@ class CreateTables < ActiveRecord::Migration
       ## Lockable
       t.datetime :locked_at
 
-      t.timestamps
+      t.timestamps :null => false
     end
   end
 
