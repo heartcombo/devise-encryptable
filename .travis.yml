@@ -15,8 +15,7 @@ matrix:
       gemfile: gemfiles/Gemfile.rails-3.2.x
 notifications:
   email: false
-  campfire:
+  slack:
     on_success: change
     on_failure: always
-    rooms:
-      - secure: "apo8q+63WTaltM6kUD4GFoMO3zVXaMV0O38yo7LN0xyD2O9650UpTZZdMZ6D\narJ29YCumJf3KsdPcxq3wcM0JhNCkg/G+apJYUDRJdlcboYr84v3/MbJf53U\ng8p7Big1TYbt5cjD40VQJTSqlzHgPoQAy2wGjuryuCY8jt+6wB0="
+    secure: gIz2OQRVwzQBFJYVuc4D9rZ6w+9Mk8sTtGHy56qUvJSQI6c3st3eNXs7xpDlJ2DJ0x/4P4BltzYemvILghQGfk2drjMNKBc9Fxx7Wk1jnVzeLp2zt3Q2kp2kBf/uChfyXLKOsiBOKBG8SGe8dIf8N7wWPSKgUK9zHdH8M71A7kw=
