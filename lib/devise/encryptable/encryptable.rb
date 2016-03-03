@@ -21,6 +21,7 @@ module Devise
       autoload :RestfulAuthenticationSha1, 'devise/encryptable/encryptors/restful_authentication_sha1'
       autoload :Sha1, 'devise/encryptable/encryptors/sha1'
       autoload :Sha512, 'devise/encryptable/encryptors/sha512'
+      autoload :Pbkdf2, 'devise/encryptable/encryptors/pbkdf2'
     end
   end
 end
