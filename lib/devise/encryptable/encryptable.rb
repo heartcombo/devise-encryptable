@@ -6,7 +6,8 @@ module Devise
     :sha512 => 128,
     :clearance_sha1 => 40,
     :restful_authentication_sha1 => 40,
-    :authlogic_sha512 => 128
+    :authlogic_sha512 => 128,
+    :pbkdf2 => 128
   }
 
   # Used to define the password encryption algorithm.
@@ -21,6 +22,7 @@ module Devise
       autoload :RestfulAuthenticationSha1, 'devise/encryptable/encryptors/restful_authentication_sha1'
       autoload :Sha1, 'devise/encryptable/encryptors/sha1'
       autoload :Sha512, 'devise/encryptable/encryptors/sha512'
+      autoload :Pbkdf2, 'devise/encryptable/encryptors/pbkdf2'
     end
   end
 end

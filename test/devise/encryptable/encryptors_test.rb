@@ -21,6 +21,12 @@ class Encryptors < ActiveSupport::TestCase
     assert_equal clearance, encryptor
   end
 
+  test 'should match a password created by pbkdf2' do
+    pbkdf2_hash = '2136f25eeafa8f530ce75ad457625ae7b494cb6d2038a86b30aff4caab20bfc8a59c9c89966c68c560410b60942636e1ba835c8bff7e1880e8af61a78d7c9405'
+    encryptor = Devise::Encryptable::Encryptors::Pbkdf2.digest('123mudar', 10, '48901d2b247a54088acb7f8ea3e695e50fe6791b', 'fee9a51ec0a28d11be380ca6dee6b4b760c1a3bf')
+    assert_equal pbkdf2_hash, encryptor
+  end
+
   test 'digest should raise NotImplementedError if not implemented in subclass' do
     c = Class.new(Devise::Encryptable::Encryptors::Base)
     assert_raise(NotImplementedError) do
