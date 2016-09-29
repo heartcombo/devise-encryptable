@@ -33,6 +33,12 @@ end
 
 And you're ready to go!
 
+## Configuration
+
+The `pbkdf2` encryptor uses a different algorithm than bcrypt to slow down its hashing mechanism and so the example
+values for `stretches` you might see in the Devise documentation will not apply to `pbkdf2`. You probably
+want a value like `100_000` rather than `10`.
+
 ## Contributing
 
 * Fork it
