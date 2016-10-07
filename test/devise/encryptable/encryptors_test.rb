@@ -21,6 +21,17 @@ class Encryptors < ActiveSupport::TestCase
     assert_equal clearance, encryptor
   end
 
+  begin
+    require 'argon2'
+    test 'should match a password created by argon2' do
+      argon2_hash_prefix = '$argon2i$v=19$m=1024,t=2,p=1$'
+      encryptor = Devise::Encryptable::Encryptors::Argon2.digest('123mudar', 10, '48901d2b247a54088acb7f8ea3e695e50fe6791b', 'fee9a51ec0a28d11be380ca6dee6b4b760c1a3bf')
+      assert_match argon2_hash_prefix, encryptor
+    end
+  rescue LoadError
+    puts "Install argon2 gem to test encryptor"
+  end
+
   test 'digest should raise NotImplementedError if not implemented in subclass' do
     c = Class.new(Devise::Encryptable::Encryptors::Base)
     assert_raise(NotImplementedError) do
