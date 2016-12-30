@@ -6,6 +6,7 @@ module Devise
     :sha512 => 128,
     :clearance_sha1 => 40,
     :restful_authentication_sha1 => 40,
+    :ldap_ssha => 38,
     :authlogic_sha512 => 128
   }
 
@@ -19,6 +20,7 @@ module Devise
       autoload :Base, 'devise/encryptable/encryptors/base'
       autoload :ClearanceSha1, 'devise/encryptable/encryptors/clearance_sha1'
       autoload :RestfulAuthenticationSha1, 'devise/encryptable/encryptors/restful_authentication_sha1'
+      autoload :LdapSsha, 'devise/encryptable/encryptors/ldap_ssha'
       autoload :Sha1, 'devise/encryptable/encryptors/sha1'
       autoload :Sha512, 'devise/encryptable/encryptors/sha512'
     end
