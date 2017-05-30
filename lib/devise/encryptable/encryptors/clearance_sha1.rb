@@ -1,4 +1,10 @@
-require "digest/sha1"
+begin
+  require 'openssl'
+  Object.send(:remove_const, :Digest)
+  Digest = OpenSSL::Digest
+rescue LoadError
+  require "digest/sha1"
+end
 
 module Devise
   module Encryptable
