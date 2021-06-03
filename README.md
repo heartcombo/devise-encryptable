@@ -1,7 +1,5 @@
 # Devise Encryptable
 
-[![Build Status](https://api.travis-ci.org/plataformatec/devise-encryptable.png)](https://travis-ci.org/plataformatec/devise-encryptable)
-
 Use alternative (and even your own!) encryptors with Devise.
 
 ## Usage

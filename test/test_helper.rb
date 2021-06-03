@@ -20,4 +20,11 @@ end
 ActiveRecord::Migration.verbose = false
 ActiveRecord::Base.logger = Logger.new(nil)
 
-ActiveRecord::Migrator.migrate(File.expand_path("test/rails_app/db/migrate"))
+migrate_path = File.expand_path("rails_app/db/migrate/", __dir__)
+if Rails.version.start_with? '6'
+  ActiveRecord::MigrationContext.new(migrate_path, ActiveRecord::SchemaMigration).migrate
+elsif Rails.version.start_with? '5.2'
+  ActiveRecord::MigrationContext.new(migrate_path).migrate
+else
+  ActiveRecord::Migrator.migrate(migrate_path)
+end
