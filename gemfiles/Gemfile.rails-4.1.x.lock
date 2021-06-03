@@ -45,7 +45,7 @@ GEM
     erubis (2.7.0)
     hike (1.2.3)
     i18n (0.7.0)
-    json (1.8.1)
+    json (1.8.6)
     mail (2.6.3)
       mime-types (>= 1.16, < 3)
     metaclass (0.0.4)
@@ -101,3 +101,6 @@ DEPENDENCIES
   mocha (= 1.0.0)
   rails (~> 4.1.0)
   sqlite3
+
+BUNDLED WITH
+   1.17.3
