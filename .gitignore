@@ -16,3 +16,4 @@ test/version_tmp
 tmp
 *.sqlite
 gemfiles/*.lock
+Gemfile.lock
