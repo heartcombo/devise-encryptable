@@ -40,4 +40,4 @@ And you're ready to go!
 
 ## License
 
-Apache License version 2. Copyright 2012-2015 Plataformatec http://plataformatec.com.br
+Apache License version 2. Copyright 2020-2023 Rafael França, Carlos Antônio da Silva. Copyright 2012-2019 Plataformatec.
