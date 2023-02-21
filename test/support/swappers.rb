@@ -2,6 +2,7 @@ module Support
   module Swappers
     def swap_with_encryptor(klass, encryptor, options={})
       klass.instance_variable_set(:@encryptor_class, nil)
+      klass.instance_variable_set(:@transition_from_encryptor, nil)
 
       swap klass, options.merge(:encryptor => encryptor) do
         begin
