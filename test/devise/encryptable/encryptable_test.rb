@@ -48,6 +48,21 @@ class EncryptableTest < ActiveSupport::TestCase
     assert_not_equal encrypted_password, admin.encrypted_password
   end
 
+  test 'should roll from legacy encryptor to the new one' do
+    admin = nil
+
+    swap_with_encryptor Admin, :sha1 do
+      admin = create_admin
+      assert admin.valid_password?('123456')
+      assert_equal admin.encrypted_password, encrypt_password(admin, Admin.pepper, Admin.stretches, Devise::Encryptable::Encryptors::Sha1)
+    end
+
+    swap_with_encryptor Admin, :sha512, transition_from_encryptor: :sha1 do
+      assert admin.valid_password?('123456')
+      assert_equal admin.encrypted_password, encrypt_password(admin, Admin.pepper, Admin.stretches, Devise::Encryptable::Encryptors::Sha512)
+    end
+  end
+
   test 'should respect encryptor configuration' do
     swap_with_encryptor Admin, :sha512 do
       admin = create_admin

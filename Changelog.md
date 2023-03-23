@@ -2,6 +2,7 @@
 
 * Support Rails 4.1 - 7.0, dropped support for Rails <= 4.0. (same support as Devise as of v4.8)
 * Support Ruby 2.1 - 3.1, dropped support for Ruby <= 2.0. (same support as Devise as of v4.8)
+* Add support to roll legacy encryptors
 
 ### 0.2.0
 

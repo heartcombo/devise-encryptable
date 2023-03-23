@@ -13,9 +13,13 @@ module Devise
     #
     #   * +encryptor+: the encryptor going to be used. By default is nil.
     #
+    #   * +transition_from_encryptor+: the legacy encryptor that needs to rolled to the +encryptor+.
+    #
     # == Examples
     #
-    #    User.find(1).valid_password?('password123') # returns true/false
+    #    User.find(1).valid_password?('password123')
+    #    #=> returns true/false
+    #    #=> if true and using a legacy encryptor, it will update the user to the new encryptor.
     #
     module Encryptable
       extend ActiveSupport::Concern
@@ -38,7 +42,21 @@ module Devise
       # Validates the password considering the salt.
       def valid_password?(password)
         return false if encrypted_password.blank?
-        encryptor_class.compare(encrypted_password, password, self.class.stretches, authenticatable_salt, self.class.pepper)
+
+        encryptor_arguments = [
+          encrypted_password,
+          password,
+          self.class.stretches,
+          authenticatable_salt,
+          self.class.pepper
+        ]
+
+        if transition_from_encryptor_class.try(:compare, *encryptor_arguments)
+          update_attribute(:password, password)
+          return true
+        end
+
+        encryptor_class.compare(*encryptor_arguments)
       end
 
       # Overrides authenticatable salt to use the new password_salt
@@ -62,23 +80,39 @@ module Devise
         self.class.encryptor_class
       end
 
+      def transition_from_encryptor_class
+        self.class.transition_from_encryptor_class
+      end
+
       module ClassMethods
         Devise::Models.config(self, :encryptor)
+        Devise::Models.config(self, :transition_from_encryptor)
 
         # Returns the class for the configured encryptor.
         def encryptor_class
-          @encryptor_class ||= case encryptor
-            when :bcrypt
-              raise "In order to use bcrypt as encryptor, simply remove :encryptable from your devise model"
-            when nil
-              raise "You need to give an :encryptor as option in order to use :encryptable"
-            else
-              Devise::Encryptable::Encryptors.const_get(encryptor.to_s.classify)
-          end
+          @encryptor_class ||= compute_encryptor_class(encryptor)
+        end
+
+        # Returns the class for the configured transition from encryptor.
+        def transition_from_encryptor_class
+          @transition_from_encryptor_class ||= compute_encryptor_class(transition_from_encryptor) if transition_from_encryptor
         end
 
         def password_salt
           self.encryptor_class.salt(self.stretches)
+        end
+
+        private
+
+        def compute_encryptor_class(encryptor)
+          case encryptor
+          when :bcrypt
+            raise "In order to use bcrypt as encryptor, simply remove :encryptable from your devise model"
+          when nil
+            raise "You need to give an :encryptor as option in order to use :encryptable"
+          else
+            Devise::Encryptable::Encryptors.const_get(encryptor.to_s.classify)
+          end
         end
       end
     end
