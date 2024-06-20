@@ -13,6 +13,10 @@ module Devise
   mattr_accessor :encryptor
   @@encryptor = nil
 
+  # Used to define a legacy algorithm that needs to be rolled to a new one.
+  mattr_accessor :transition_from_encryptor
+  @@transition_from_encryptor = nil
+
   module Encryptable
     module Encryptors
       autoload :AuthlogicSha512, 'devise/encryptable/encryptors/authlogic_sha512'
