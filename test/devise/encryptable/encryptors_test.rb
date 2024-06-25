@@ -21,6 +21,12 @@ class Encryptors < ActiveSupport::TestCase
     assert_equal clearance, encryptor
   end
 
+  test 'should match a password created by LDAP SSHA' do
+    ldap = "{SSHA}SBHbzCOyVGhpEGiR3eXRuCVIEH0WK8EJ"
+    encryptor = Devise::Encryptable::Encryptors::LdapSsha.digest('123mudar', nil, "\x16+\xC1\t".force_encoding('ASCII-8BIT'), nil)
+    assert_equal ldap, encryptor
+  end
+
   test 'digest should raise NotImplementedError if not implemented in subclass' do
     c = Class.new(Devise::Encryptable::Encryptors::Base)
     assert_raise(NotImplementedError) do
