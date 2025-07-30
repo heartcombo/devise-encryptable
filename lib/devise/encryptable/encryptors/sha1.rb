@@ -19,7 +19,7 @@ module Devise
         # Generate a SHA1 digest joining args. Generated token is something like
         #   --arg1--arg2--arg3--argN--
         def self.secure_digest(*tokens)
-          ::Digest::SHA1.hexdigest('--' << tokens.flatten.join('--') << '--')
+          ::Digest::SHA1.hexdigest(+'--' << tokens.flatten.join('--') << '--')
         end
       end
     end
