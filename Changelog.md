@@ -1,7 +1,7 @@
 ### Unreleased
 
-* Support Rails 4.1 - 7.0, dropped support for Rails <= 4.0. (same support as Devise as of v4.8)
-* Support Ruby 2.1 - 3.1, dropped support for Ruby <= 2.0. (same support as Devise as of v4.8)
+* Support Rails 7 - 8.1, drop support < 7
+* Support Ruby 2.7 - 3.4, drop support < 2.7
 
 ### 0.2.0
 

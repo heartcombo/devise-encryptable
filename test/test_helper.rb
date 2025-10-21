@@ -7,7 +7,7 @@ require "devise/encryptable/encryptable"
 
 require "rails_app/config/environment"
 require "rails/test_help"
-require "mocha/setup"
+require "mocha/minitest"
 
 require 'support/assertions'
 require 'support/factories'
@@ -21,10 +21,8 @@ ActiveRecord::Migration.verbose = false
 ActiveRecord::Base.logger = Logger.new(nil)
 
 migrate_path = File.expand_path("rails_app/db/migrate/", __dir__)
-if Rails::VERSION::MAJOR >= 6
+if Rails.version.start_with? '7.0'
   ActiveRecord::MigrationContext.new(migrate_path, ActiveRecord::SchemaMigration).migrate
-elsif Rails.version.start_with? '5.2'
-  ActiveRecord::MigrationContext.new(migrate_path).migrate
 else
-  ActiveRecord::Migrator.migrate(migrate_path)
+  ActiveRecord::MigrationContext.new(migrate_path).migrate
 end

@@ -6,4 +6,4 @@ gem 'devise', github: 'heartcombo/devise', branch: 'main'
 gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'sqlite3'
 
-gem 'mocha', '~> 1.0', require: false
+gem 'mocha', require: false
