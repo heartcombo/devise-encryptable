@@ -2,8 +2,8 @@ source 'https://rubygems.org'
 
 gemspec
 
-gem 'devise', '~> 4.8'
-gem 'rails', '~> 7.0.0'
+gem 'devise', '~> 5.0.0.beta', github: 'heartcombo/devise', branch: 'main'
+gem 'rails', '~> 8.1.0.rc1'
 gem 'sqlite3'
 
-gem 'mocha', '~> 1.0', require: false
+gem 'mocha', require: false

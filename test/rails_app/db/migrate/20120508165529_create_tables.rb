@@ -1,9 +1,5 @@
-superclass = ActiveRecord::Migration
-# TODO: Inherit from the 5.0 Migration class directly when we drop support for Rails 4.
-superclass = ActiveRecord::Migration[5.0] if superclass.respond_to?(:[])
-
-class CreateTables < superclass
-  def self.up
+class CreateTables < ActiveRecord::Migration[7.0]
+  def up
     create_table :users do |t|
       t.string :username
       t.string :facebook_token
@@ -74,7 +70,7 @@ class CreateTables < superclass
     end
   end
 
-  def self.down
+  def down
     drop_table :users
     drop_table :admins
   end
