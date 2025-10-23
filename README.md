@@ -40,4 +40,6 @@ And you're ready to go!
 
 ## License
 
-Apache License version 2. Copyright 2020-2024 Rafael França, Carlos Antônio da Silva. Copyright 2012-2019 Plataformatec.
+MIT License.
+Copyright 2020-2025 Rafael França, Carlos Antonio da Silva.
+Copyright 2012-2019 Plataformatec.

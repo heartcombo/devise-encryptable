@@ -2,6 +2,7 @@
 
 * Support Rails 7 - 8.1, drop support < 7
 * Support Ruby 2.7 - 3.4, drop support < 2.7
+* Switch license from Apache-2.0 to MIT, matching Devise
 
 ### 0.2.0
 

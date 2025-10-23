@@ -9,7 +9,7 @@ Gem::Specification.new do |gem|
   gem.homepage      = 'https://github.com/heartcombo/devise-encryptable'
   gem.license       = 'MIT'
 
-  gem.files         = Dir['Changelog.md', 'LICENSE', 'README.md', 'lib/**/*']
+  gem.files         = Dir['Changelog.md', 'MIT-LICENSE', 'README.md', 'lib/**/*']
   gem.test_files    = Dir['test/**/*.rb']
   gem.name          = 'devise-encryptable'
   gem.require_paths = ['lib']
