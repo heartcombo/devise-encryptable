@@ -3,11 +3,11 @@ require File.expand_path('../lib/devise/encryptable/version', __FILE__)
 
 Gem::Specification.new do |gem|
   gem.authors       = ['Carlos Antonio da Silva', 'José Valim', 'Rodrigo Flores']
-  gem.email         = 'opensource@plataformatec.com.br'
+  gem.email         = 'heartcombo.oss@gmail.com'
   gem.description   = 'Encryption solution for salted-encryptors on Devise'
   gem.summary       = 'Encryption solution for salted-encryptors on Devise'
-  gem.homepage      = 'http://github.com/plataformatec/devise-encryptable'
-  gem.license       = 'Apache-2.0'
+  gem.homepage      = 'https://github.com/heartcombo/devise-encryptable'
+  gem.license       = 'MIT'
 
   gem.files         = Dir['Changelog.md', 'LICENSE', 'README.md', 'lib/**/*']
   gem.test_files    = Dir['test/**/*.rb']

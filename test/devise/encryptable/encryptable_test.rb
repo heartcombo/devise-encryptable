@@ -25,7 +25,7 @@ class EncryptableTest < ActiveSupport::TestCase
     swap_with_encryptor Admin, :sha1 do
       # Devise 3.1+ uses a different method to generate friendly tokens,
       # when we drop support for Devise 2 we can remove this hack.
-      # https://github.com/plataformatec/devise/commit/4048545151fe467c9d8c8c6fce164788bb36e25f.
+      # https://github.com/heartcombo/devise/commit/4048545151fe467c9d8c8c6fce164788bb36e25f.
       expected_method = Devise::VERSION >= '3.1.0' ? :urlsafe_base64 : :base64
 
       SecureRandom.expects(expected_method).with(15).returns('01lI').once
