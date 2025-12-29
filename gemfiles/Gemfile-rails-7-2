@@ -1,9 +1,7 @@
 source 'https://rubygems.org'
 
-gem 'devise-encryptable', path: '..'
+gemspec path: '..'
 
 gem 'devise', '~> 4.8'
 gem 'rails', '~> 7.2.0'
 gem 'sqlite3'
-
-gem 'mocha', require: false

@@ -16,4 +16,8 @@ Gem::Specification.new do |gem|
   gem.version       = Devise::Encryptable::VERSION
 
   gem.add_dependency 'devise', '>= 2.1.0'
+
+  gem.add_development_dependency 'minitest', '< 6'
+  gem.add_development_dependency 'mocha'
+  gem.add_development_dependency 'rake'
 end
