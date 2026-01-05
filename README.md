@@ -41,5 +41,5 @@ And you're ready to go!
 ## License
 
 MIT License.
-Copyright 2020-2025 Rafael França, Carlos Antonio da Silva.
+Copyright 2020-CURRENT Rafael França, Carlos Antonio da Silva.
 Copyright 2012-2019 Plataformatec.
