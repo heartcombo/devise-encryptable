@@ -20,11 +20,6 @@ module Devise
     module Encryptable
       extend ActiveSupport::Concern
 
-      included do
-        attr_reader :password, :current_password
-        attr_accessor :password_confirmation
-      end
-
       def self.required_fields(klass)
         [:password_salt]
       end
