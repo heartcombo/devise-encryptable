@@ -1,4 +1,4 @@
-### Unreleased
+### 0.3.0
 
 * Support Rails 7 - 8.1, drop support < 7
 * Support Ruby 2.7 - 3.4 and 4.0, drop support < 2.7
